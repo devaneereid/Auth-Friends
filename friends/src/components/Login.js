@@ -6,12 +6,17 @@ const Input = styled.input`
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
+    font-family: monospace;
 `;
 const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 15px 15em;
+    background: lavender;
+    padding: 15px 40px 40px 40px;
+    border-radius: 20px;
+    font-family: monospace;
 `;
 const Button = styled.button`
     padding: 15px 50px;
@@ -19,6 +24,7 @@ const Button = styled.button`
     margin: 20px;
     border: 2px solid darkcyan;
     background: paleturquoise;
+    font-family: monospace;
 `;
 
 class Login extends React.Component {
@@ -56,24 +62,24 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <h1>Friends</h1>
                 <Form onSubmit={this.login}>
-                    <Input
-                        type='text'
-                        name='username'
-                        value={this.state.credentials.username}
-                        onChange={this.handleChange}
-                        placeholder='Username'
-                        />
-                    <Input  
-                        type='password'
-                        name='password'
-                        value={this.state.credentials.password}
-                        onChange={this.handleChange}
-                        placeholder='Password'
-                        />
+                    <h1>Friends</h1>
+                        <Input
+                            type='text'
+                            name='username'
+                            value={this.state.credentials.username}
+                            onChange={this.handleChange}
+                            placeholder='Username'
+                            />
+                        <Input  
+                            type='password'
+                            name='password'
+                            value={this.state.credentials.password}
+                            onChange={this.handleChange}
+                            placeholder='Password'
+                            />
                     <Button>Login</Button>
-                    {this.state.isFetching && 'logging in'}
+                    {this.state.isFetching && 'Checking Credentials'}
                 </Form>
             </div>
         );

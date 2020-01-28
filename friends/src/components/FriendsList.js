@@ -9,6 +9,7 @@ const Button = styled.button`
     margin: 20px;
     border: 2px solid darkcyan;
     background: paleturquoise;
+    font-family: monospace;
 `;
 const Form = styled.form`
     display: flex;
@@ -20,6 +21,11 @@ const Input = styled.input`
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
+    background: lavender;
+    font-family: monospace;
+`;
+const Friends = styled.div`
+    font-family: monospace;
 `;
 
 
@@ -99,11 +105,11 @@ const FriendsList = () => {
                 </div>
             {friendData.map(prop => {
                 return (
-                    <div>
+                    <Friends>
                         <h4>Name: {prop.name}</h4>
                         <p>Age: {prop.age}</p>
                         <p>Email: {prop.email}</p>
-                    </div>
+                    </Friends>
                 )
             })}
         </div>
