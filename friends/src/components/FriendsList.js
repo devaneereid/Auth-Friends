@@ -34,6 +34,7 @@ const FriendsList = () => {
         id: '',
         name: '',
         age: '',
+        job: '',
         email: ''
     });
     const [friendData, setFriendData] = useState([])
@@ -88,6 +89,13 @@ const FriendsList = () => {
                 />
                 <Input  
                     type='text'
+                    name='job'
+                    value={friend.job}
+                    onChange={handleChange}
+                    placeholder='Job'
+                /> 
+                <Input  
+                    type='text'
                     name='email'
                     value={friend.email}
                     onChange={handleChange}
@@ -108,7 +116,9 @@ const FriendsList = () => {
                     <Friends>
                         <h4>Name: {prop.name}</h4>
                         <p>Age: {prop.age}</p>
+                        <p>Job: {prop.job}</p>
                         <p>Email: {prop.email}</p>
+                        <br />
                     </Friends>
                 )
             })}
