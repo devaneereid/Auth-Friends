@@ -1,6 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Loader from 'react-loader-spinner';
+import styled from 'styled-components';
+
+const Button = styled.button`
+    padding: 15px 50px;
+    border-radius: 20px;
+    margin: 20px;
+    border: 2px solid darkcyan;
+    background: paleturquoise;
+`;
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px 8em;
+`;
+const Input = styled.input`
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+`;
+
 
 const FriendsList = () => {
     const [friend, setFriend] = useState({
@@ -44,30 +65,30 @@ const FriendsList = () => {
 
     return (
         <div>
-            <form>
-                <input
+            <Form>
+                <Input
                     type='text'
                     name='name'
                     value={friend.name}
                     onChange={handleChange}
                     placeholder='Name'
                 />
-                <input 
+                <Input 
                     type='text'
                     name='age'
                     value={friend.age}
                     onChange={handleChange}
                     placeholder='Age'
                 />
-                <input  
+                <Input  
                     type='text'
                     name='email'
                     value={friend.email}
                     onChange={handleChange}
                     placeholder='Email'
                 />
-            </form>
-            <button onClick={newFriend}>Add New Friend!</button>
+            </Form>
+            <Button onClick={newFriend}>Add New Friend!</Button>
                 <div className='spinner'>
                     <Loader 
                         type='Puff' 
